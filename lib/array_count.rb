@@ -1,12 +1,16 @@
 require 'pry'
 def count_strings(array)
   # Return the total number of strings in the provided array using the count enumerable
-  array.count do |num|
-    array[num].is_a?(string)
-    binding.pry
+  array.count do |item|
+    item.is_a?(string)
   end
 end
 
 def count_empty_strings(array)
   # Return the total number of EMPTY strings in the provided array using the count enumerable
+  array.count do |item|
+    if item.is_a?(string)
+      item == ""
+    end
+  end
 end
